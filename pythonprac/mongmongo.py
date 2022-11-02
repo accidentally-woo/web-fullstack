@@ -28,8 +28,11 @@ db = client.woo
 # db.users.insert_one({'name':'john','age':30})
 
 # 모든 데이터 뽑아보기
-all_users = list(db.users.find({},{'_id':False}))
+# all_users = list(db.users.find({},{'_id':False})) # id 속성 빼고 조회
+all_users = list(db.users.find({})) # 전체 조회
 
+print(db.users.find_one({"name":"bob"}))
+print("~~~~")
 print(all_users[0])         # 0번째 결과값을 보기
 print(all_users[0]['name']) # 0번째 결과값의 'name'을 보기
 
